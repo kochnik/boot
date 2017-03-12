@@ -6,8 +6,12 @@ import it.coderunner.model.Person;
 
 public interface PersonDAO {
 
-	void save(Person p);
+	Person save(Person p);
 	
 	List<Person> list();
+	
+	Person selectById (int id);
+	Person update(Person p);
+	
 	
 }

@@ -15,10 +15,10 @@ public class CarDAOImpl implements CarDAO {
 
 	private SessionFactory sessionFactory;
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-    
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
 	public void save(Car c) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();

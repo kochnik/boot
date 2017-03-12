@@ -3,6 +3,8 @@ package it.coderunner.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,8 +16,20 @@ public class Car {
 	private int id;
 
 	private String brand;
-
+	
 	private String color;
+	
+	@ManyToOne
+	@JoinColumn(name="person_id")
+	private Person person;
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
 
 	public int getId() {
 		return id;
